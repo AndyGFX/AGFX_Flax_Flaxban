@@ -1,0 +1,202 @@
+{
+	"ID": "1cf075af478440008229659b51ace728",
+	"TypeName": "FlaxEngine.SceneAsset",
+	"EngineBuild": 6605,
+	"Data": [
+		{
+			"ID": "1cf075af478440008229659b51ace728",
+			"TypeName": "FlaxEngine.Scene",
+			"LightmapSettings": {
+				"IndirectLightingIntensity": 1.0,
+				"GlobalObjectsScale": 1.0,
+				"ChartsPadding": 3,
+				"AtlasSize": 1024,
+				"BounceCount": 1,
+				"CompressLightmaps": true,
+				"UseGeometryWithNoMaterials": true,
+				"Quality": 10
+			}
+		},
+		{
+			"ID": "f9c63a9c4356371b09965da2a5879cd6",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "1cf075af478440008229659b51ace728",
+			"Name": "Visuals"
+		},
+		{
+			"ID": "ff2290d94f7930fa835f1c93e68c6499",
+			"TypeName": "FlaxEngine.DirectionalLight",
+			"ParentID": "f9c63a9c4356371b09965da2a5879cd6",
+			"Name": "Sun",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 160.0,
+					"Z": 0.0
+				},
+				"Orientation": {
+					"X": 0.3535534143447876,
+					"Y": 0.3535534143447876,
+					"Z": -0.14644663035869599,
+					"W": 0.8535533547401428
+				}
+			}
+		},
+		{
+			"ID": "304e115f4f31cceb845a00bf4563cf41",
+			"TypeName": "FlaxEngine.Sky",
+			"ParentID": "f9c63a9c4356371b09965da2a5879cd6",
+			"Name": "Sky",
+			"Transform": {
+				"Translation": {
+					"X": 40.0,
+					"Y": 150.0,
+					"Z": 0.0
+				}
+			},
+			"Sun": "ff2290d94f7930fa835f1c93e68c6499"
+		},
+		{
+			"ID": "a8fa90854237da8378f171aa989fc47d",
+			"TypeName": "FlaxEngine.SkyLight",
+			"ParentID": "f9c63a9c4356371b09965da2a5879cd6",
+			"Name": "SkyLight",
+			"Brightness": 2.5,
+			"CustomTexture": "c54410104ff39427bc11e5bc761d66b0"
+		},
+		{
+			"ID": "fcf3c13747f910a7d66ca0bf823210cd",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "f9c63a9c4356371b09965da2a5879cd6",
+			"Name": "Plane",
+			"Transform": {
+				"Translation": {
+					"X": 1300.0,
+					"Y": -20.0,
+					"Z": 1600.0
+				},
+				"Orientation": {
+					"X": -0.7071068286895752,
+					"Y": 0.0,
+					"Z": 0.0,
+					"W": 0.7071068286895752
+				},
+				"Scale": {
+					"X": 50.0,
+					"Y": 50.0,
+					"Z": 50.0
+				}
+			},
+			"Model": "54a1ff4a42af9f018234f7b39b1366b3",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "749cbad64cead132f9c55191c75b033e",
+			"TypeName": "FlaxEngine.Camera",
+			"ParentID": "1cf075af478440008229659b51ace728",
+			"Name": "Camera"
+		},
+		{
+			"ID": "6c941632417aad0e93fddc88a563b7c0",
+			"TypeName": "Game.CameraControl",
+			"ParentID": "749cbad64cead132f9c55191c75b033e",
+			"V": {
+	"orientation": {
+		"X": 60.0,
+		"Y": -90.0,
+		"Z": 0.0
+	},
+	"zoomKeySpeed": 20.0
+}
+		},
+		{
+			"ID": "440e3bb34105f29533797fae21b0024d",
+			"TypeName": "FlaxEngine.AudioListener",
+			"ParentID": "749cbad64cead132f9c55191c75b033e",
+			"Name": "Audio Listener"
+		},
+		{
+			"ID": "95a206fb474622bfee77dabb0fe02977",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "1cf075af478440008229659b51ace728",
+			"Name": "Level"
+		},
+		{
+			"ID": "7bb954ec43cca6f29cc39d822d0d7926",
+			"TypeName": "Game.Sokoban.LevelBuilder",
+			"ParentID": "95a206fb474622bfee77dabb0fe02977",
+			"V": {
+	"definition": "1e8b1e8844cf37795f6110831d02b04d"
+}
+		},
+		{
+			"ID": "27cc8c0a48b6e9eb5cebddb2d576d9e7",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "1cf075af478440008229659b51ace728",
+			"Name": "Player"
+		},
+		{
+			"ID": "c5d991fb4dd5a5a9383cc3bc8ae65217",
+			"TypeName": "Game.PlayerControl",
+			"ParentID": "27cc8c0a48b6e9eb5cebddb2d576d9e7",
+			"V": {}
+		},
+		{
+			"ID": "c7773dcb41bafcb7c93f4389115592ee",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "1cf075af478440008229659b51ace728",
+			"Name": "Game-Manager"
+		},
+		{
+			"ID": "4f5a4b9c48387b85b1e0688a0121a8b1",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "c7773dcb41bafcb7c93f4389115592ee",
+			"Name": "Control"
+		},
+		{
+			"ID": "417deb224da157eb030753a472a80efe",
+			"TypeName": "Game.Sokoban.GameControl",
+			"ParentID": "4f5a4b9c48387b85b1e0688a0121a8b1",
+			"V": {
+	"LEVEL_object_name": "Level",
+	"CAMERA_object_name": "Camera",
+	"PLAYER_object_name": "Player",
+	"PLAYER_prefab": "21ff13964dc568a5d6fda2903d55f1a3"
+}
+		},
+		{
+			"ID": "76e24f37436719f32a8f82b44978305d",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "c7773dcb41bafcb7c93f4389115592ee",
+			"Name": "LevelDefinition"
+		},
+		{
+			"ID": "1e8b1e8844cf37795f6110831d02b04d",
+			"TypeName": "Game.LevelDefinition",
+			"ParentID": "76e24f37436719f32a8f82b44978305d",
+			"V": {
+	"map": "c06ad8984aafdfc9c3fc0fa6f99e850d",
+	"prefabHome": "d061a30d4a8f44ad1ea2c8871544c5b5",
+	"colorHome": {
+		"R": 0.0,
+		"G": 1.0,
+		"B": 0.0,
+		"A": 1.0
+	},
+	"prefabFloor": "916a5ea44efa03556ef9dea48e979ba3",
+	"prefabWall": "0d14c26a4ac10ae82030c988a670c883",
+	"prefabTarget": "d8d23ff641182c3e94576d92b724668f",
+	"prefabChest": "cd9e57074e223acca5a8b4ade1a73668"
+}
+		}
+	]
+}

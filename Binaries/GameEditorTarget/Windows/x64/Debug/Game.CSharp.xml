@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Game.CSharp</name>
+    </assembly>
+    <members>
+        <member name="T:Game.CameraControl">
+            <summary>
+            CameraControl Script.
+            </summary>
+        </member>
+        <member name="M:Game.CameraControl.OnStart">
+            <inheritdoc/>
+            
+        </member>
+        <member name="M:Game.CameraControl.OnEnable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.CameraControl.OnDisable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.CameraControl.OnUpdate">
+            <inheritdoc/>
+        </member>
+        <member name="T:Game.Sokoban.GameControl">
+            <summary>
+            GameControl Script.
+            </summary>
+        </member>
+        <member name="M:Game.Sokoban.GameControl.OnStart">
+            <inheritdoc/>
+            
+        </member>
+        <member name="M:Game.Sokoban.GameControl.OnEnable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.Sokoban.GameControl.OnDisable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.Sokoban.GameControl.OnUpdate">
+            <inheritdoc/>
+        </member>
+        <member name="T:Game.Sokoban.GLOBAL">
+            <summary>
+            GLOBAL Script.
+            </summary>
+        </member>
+        <member name="T:Game.Sokoban.LevelBuilder">
+            <summary>
+            LevelBuilder Script.
+            </summary>
+        </member>
+        <member name="M:Game.Sokoban.LevelBuilder.OnStart">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.Sokoban.LevelBuilder.OnEnable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.Sokoban.LevelBuilder.OnDisable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.Sokoban.LevelBuilder.OnUpdate">
+            <inheritdoc/>
+        </member>
+        <member name="T:Game.LevelDefinition">
+            <summary>
+            LevelDefinition Script.
+            </summary>
+        </member>
+        <member name="M:Game.LevelDefinition.OnStart">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.LevelDefinition.OnEnable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.LevelDefinition.OnDisable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.LevelDefinition.OnUpdate">
+            <inheritdoc/>
+        </member>
+        <member name="T:Game.PlayerControl">
+            <summary>
+            PlayerControl Script.
+            </summary>
+        </member>
+        <member name="M:Game.PlayerControl.OnStart">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.PlayerControl.OnEnable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.PlayerControl.OnDisable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.PlayerControl.OnUpdate">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

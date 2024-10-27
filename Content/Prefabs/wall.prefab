@@ -1,0 +1,24 @@
+{
+	"ID": "0d14c26a4ac10ae82030c988a670c883",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6605,
+	"Data": [
+	{
+		"ID": "0d2453944f9bf5865bba71acc22acf87",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "wall",
+		"Model": "20b8bc994a53bba4bba3cbbd80d32ce2",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	}
+]
+}

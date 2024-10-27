@@ -1,0 +1,21 @@
+{
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"gulp.autoDetect": "off",
+		"jake.autoDetect": "off",
+        "grunt.autoDetect": "off",
+        "omnisharp.useModernNet": true,
+        "dotnet.defaultSolution": "AGFX_Flax_Flaxban.sln"
+	},
+	"folders": [
+		{
+			"name": "AGFX_Flax_Flaxban",
+			"path": "."
+		},
+		{
+			"name": "Flax",
+			"path": "E:\\Software\\Flax\\Flax_1.9"
+		}
+	]
+}

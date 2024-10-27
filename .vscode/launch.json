@@ -1,0 +1,101 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "coreclr",
+			"name": "AGFX_Flax_Flaxban|Editor.Windows.Debug|x64 (C#)",
+			"request": "launch",
+			"preLaunchTask": "AGFX_Flax_Flaxban|Editor.Windows.Debug|x64",
+			"cwd": "F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+			"program": "E:\\Software\\Flax\\Flax_1.9\\Binaries\\Editor\\Win64\\Debug\\FlaxEditor",
+			"args": [
+				"-project",
+				"F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+				"-skipCompile"
+			],
+			"stopAtEntry": false,
+			"externalConsole": true
+		},
+		{
+			"type": "coreclr",
+			"name": "AGFX_Flax_Flaxban|Editor.Windows.Development|x64 (C#)",
+			"request": "launch",
+			"preLaunchTask": "AGFX_Flax_Flaxban|Editor.Windows.Development|x64",
+			"cwd": "F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+			"program": "E:\\Software\\Flax\\Flax_1.9\\Binaries\\Editor\\Win64\\Development\\FlaxEditor",
+			"args": [
+				"-project",
+				"F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+				"-skipCompile"
+			],
+			"stopAtEntry": false,
+			"externalConsole": true
+		},
+		{
+			"type": "coreclr",
+			"name": "AGFX_Flax_Flaxban|Editor.Windows.Release|x64 (C#)",
+			"request": "launch",
+			"preLaunchTask": "AGFX_Flax_Flaxban|Editor.Windows.Release|x64",
+			"cwd": "F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+			"program": "E:\\Software\\Flax\\Flax_1.9\\Binaries\\Editor\\Win64\\Release\\FlaxEditor",
+			"args": [
+				"-project",
+				"F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+				"-skipCompile"
+			],
+			"stopAtEntry": false,
+			"externalConsole": true
+		},
+		{
+			"type": "coreclr",
+			"name": "AGFX_Flax_Flaxban|Game.Windows.Debug|x64 (C#)",
+			"request": "launch",
+			"preLaunchTask": "AGFX_Flax_Flaxban|Game.Windows.Debug|x64",
+			"cwd": "F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+			"program": "E:\\Software\\Flax\\Flax_1.9\\Binaries\\Editor\\Win64\\Debug\\FlaxEditor",
+			"args": [
+				"-project",
+				"F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+				"-skipCompile"
+			],
+			"stopAtEntry": false,
+			"externalConsole": true
+		},
+		{
+			"type": "coreclr",
+			"name": "AGFX_Flax_Flaxban|Game.Windows.Development|x64 (C#)",
+			"request": "launch",
+			"preLaunchTask": "AGFX_Flax_Flaxban|Game.Windows.Development|x64",
+			"cwd": "F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+			"program": "E:\\Software\\Flax\\Flax_1.9\\Binaries\\Editor\\Win64\\Development\\FlaxEditor",
+			"args": [
+				"-project",
+				"F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+				"-skipCompile"
+			],
+			"stopAtEntry": false,
+			"externalConsole": true
+		},
+		{
+			"type": "coreclr",
+			"name": "AGFX_Flax_Flaxban|Game.Windows.Release|x64 (C#)",
+			"request": "launch",
+			"preLaunchTask": "AGFX_Flax_Flaxban|Game.Windows.Release|x64",
+			"cwd": "F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+			"program": "E:\\Software\\Flax\\Flax_1.9\\Binaries\\Editor\\Win64\\Release\\FlaxEditor",
+			"args": [
+				"-project",
+				"F:\\_GITHUB_FLAX\\AGFX_Flax_Flaxban",
+				"-skipCompile"
+			],
+			"stopAtEntry": false,
+			"externalConsole": true
+		},
+		{
+			"type": "coreclr",
+			"name": "AGFX_Flax_Flaxban (C# Attach Editor)",
+			"request": "attach",
+			"processName": "FlaxEditor"
+		}
+	]
+}
