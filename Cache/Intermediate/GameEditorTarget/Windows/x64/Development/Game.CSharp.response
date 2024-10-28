@@ -80,6 +80,7 @@
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\GameControl.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\GLOBAL.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\GridCell.cs"
+"F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\HUD.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\LevelBuilder.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\LevelDefinition.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\PlayerControl.cs"

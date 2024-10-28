@@ -186,6 +186,7 @@
     <Compile Include="Game\Sokoban\GameControl.cs" />
     <Compile Include="Game\Sokoban\GLOBAL.cs" />
     <Compile Include="Game\Sokoban\GridCell.cs" />
+    <Compile Include="Game\Sokoban\HUD.cs" />
     <Compile Include="Game\Sokoban\LevelBuilder.cs" />
     <Compile Include="Game\Sokoban\LevelDefinition.cs" />
     <Compile Include="Game\Sokoban\PlayerControl.cs" />

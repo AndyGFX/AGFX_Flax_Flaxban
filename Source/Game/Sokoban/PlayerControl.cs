@@ -11,6 +11,7 @@ namespace Game;
 public class PlayerControl : Script
 {
     public float moveSpeed = 5.0f;
+    public bool showDebug = true;
 
 
     private Vector2[] direction = new Vector2[4] { new Vector2(1, 0), new Vector2(0, 1), new Vector2(-1, 0), new Vector2(0,-1) };
@@ -68,8 +69,10 @@ public class PlayerControl : Script
 
         // rotate player
         this.Actor.RotateAround(this.Actor.Position, Vector3.UnitY, -90);
-
+        
         this.controlLocked  = false;
+
+        this.DebugDraw();
 
     }
 
@@ -86,31 +89,38 @@ public class PlayerControl : Script
         }
 
         // rotate player
-        this.Actor.RotateAround(this.Actor.Position, Vector3.UnitY, 90);
-
+        this.Actor.RotateAround(this.Actor.Position, Vector3.UnitY, 90);        
         this.controlLocked = false;
+
+        this.DebugDraw();
     }
 
-        private void MoveForward()
-        {
-            this.forwardStep += this.moveSpeed;
-            this.Actor.Position += this.Actor.LocalTransform.Forward * this.moveSpeed;
-            GLOBAL.CAMERA.Move(this.Actor.LocalTransform.Forward * this.moveSpeed);
-
-            // Check free space in front of viewport
-            //Vector2 checkCell = gridPosition + direction[currentDirection]*2;
-            
-
-            if (this.forwardStep >= 100)
-            {
-                this.forwardStep = 0;
-                this.controlLocked = false;
-
-                gridPosition += direction[currentDirection];
-
-                //this.txt2.Get<Label>().Text = gridPosition.ToString();
-            }
+    private void MoveForward()
+    {
+        if (this.MoveNotBlocked()) 
+        { 
+            this.controlLocked = false;
+            return; 
         }
+        
+        this.forwardStep += this.moveSpeed;
+        this.Actor.Position += this.Actor.LocalTransform.Forward * this.moveSpeed;
+        GLOBAL.CAMERA.Move(this.Actor.LocalTransform.Forward * this.moveSpeed);
+
+        // Check free space in front of viewport
+        //Vector2 checkCell = gridPosition + direction[currentDirection]*2;
+        
+
+        if (this.forwardStep >= 100)
+        {
+            this.forwardStep = 0;
+            this.controlLocked = false;
+
+            gridPosition += direction[currentDirection];
+            
+            this.DebugDraw();
+        }
+    }
 
     public void SetGridPosition(Vector2 position)
     {
@@ -120,5 +130,19 @@ public class PlayerControl : Script
     public void UpdatePosition()
     {        
         this.Actor.Position = new Float3(this.gridPosition.Y * GLOBAL.LEVEL.definition.gridCellSpacing, 0, this.gridPosition.X * GLOBAL.LEVEL.definition.gridCellSpacing);
+    }
+
+    public void DebugDraw()
+    {
+        if (this.showDebug == false) { return; }
+        GLOBAL.HUD.label_0.Text = "GPos: "+gridPosition.ToString();
+        GLOBAL.HUD.label_1.Text = "Cell: "+GLOBAL.LEVEL.GetCellType(this.gridPosition).ToString();
+        GLOBAL.HUD.label_2.Text = "Cell front: "+GLOBAL.LEVEL.GetCellType(this.gridPosition+direction[currentDirection]).ToString();
+        GLOBAL.HUD.label_3.Text = "Obstacle: "+GLOBAL.LEVEL.IsObstacle(this.gridPosition+direction[currentDirection]).ToString();
+    }
+
+    public bool MoveNotBlocked()
+    {
+        return GLOBAL.LEVEL.IsObstacle(this.gridPosition + direction[currentDirection]);
     }
 }

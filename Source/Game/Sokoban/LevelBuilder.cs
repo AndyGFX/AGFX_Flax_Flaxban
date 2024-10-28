@@ -21,6 +21,7 @@ namespace Game.Sokoban
         public override void OnStart() 
         {            
             this.pixels = new Color[this.definition.map.Height * this.definition.map.Width];
+            this.grid = new GridCell[this.definition.map.Height, this.definition.map.Width];
             this.definition.map.GetPixels(out this.pixels);
             this.self = Actor;
             
@@ -35,16 +36,17 @@ namespace Game.Sokoban
         /// <inheritdoc/>
         public override void OnUpdate() { }
 
-
+        
 
         private Color GetPixelColor(int x, int y)
         {
             Color color = this.pixels[y * this.definition.map.Width + x];
-            this.grid = new GridCell[this.definition.map.Width, this.definition.map.Height];
+            //this.grid = new GridCell[this.definition.map.Width, this.definition.map.Height];
             return color;
 
         }
-        public void BuildLevel()
+        
+        public void BuildLevel()        
         {
             Debug.Log("Building Level");
             
@@ -53,13 +55,14 @@ namespace Game.Sokoban
             {
                 for (int x = 0; x < this.definition.map.Width; x++)
                 {
+
                     Color c = this.GetPixelColor(x, y);
                     
 
                     if (c == this.definition.colorFloor)
                     {
                     
-                        this.grid[x, y] = new GridCell(eCellType.FLOOR);
+                        this.grid[x, y] = new GridCell(eCellType.FLOOR);    
                         this.grid[x, y].collision = false;
                         Actor floor = PrefabManager.SpawnPrefab(this.definition.prefabFloor, this.self);
                         
@@ -92,7 +95,7 @@ namespace Game.Sokoban
                     
                     if (c == this.definition.colorHome)
                     {
-                        this.grid[x, y] = new GridCell(eCellType.FLOOR);
+                        this.grid[x, y] = new GridCell(eCellType.HOME);
                         this.grid[x, y].collision = false;
                         Actor floor = PrefabManager.SpawnPrefab(this.definition.prefabHome, this.self);
                         floor.Position = new Float3(y * this.definition.gridCellSpacing, 0, x * this.definition.gridCellSpacing);
@@ -120,6 +123,21 @@ namespace Game.Sokoban
 
             
 
+        }
+
+        public eCellType GetCellType(int x, int y)
+        {
+            return this.grid[x, y].cellType;
+        }
+
+        public eCellType GetCellType(Vector2 position)
+        {
+            return this.grid[(int)position.X, (int)position.Y].cellType;
+        }    
+
+        public bool IsObstacle(Vector2 position)    
+        {
+            return this.grid[(int)position.X, (int)position.Y].collision;
         }
     }
 }

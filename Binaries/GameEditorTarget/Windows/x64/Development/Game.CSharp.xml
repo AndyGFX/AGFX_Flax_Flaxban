@@ -72,6 +72,23 @@
         <member name="M:Game.Sokoban.LevelBuilder.OnUpdate">
             <inheritdoc/>
         </member>
+        <member name="T:Game.HUD">
+            <summary>
+            HUD Script.
+            </summary>
+        </member>
+        <member name="M:Game.HUD.OnStart">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.HUD.OnEnable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.HUD.OnDisable">
+            <inheritdoc/>
+        </member>
+        <member name="M:Game.HUD.OnUpdate">
+            <inheritdoc/>
+        </member>
         <member name="T:Game.LevelDefinition">
             <summary>
             LevelDefinition Script.
