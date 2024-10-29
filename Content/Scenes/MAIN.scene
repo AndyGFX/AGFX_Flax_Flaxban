@@ -218,10 +218,10 @@
 			"TypeName": "Game.HUD",
 			"ParentID": "fb9a7d364a4558a3e43fe09253bc06e6",
 			"V": {
-	"Label_0": "c92606b14ee03efe263fa782276b5f90",
-	"Label_1": "bcc1f2f048557380548bd1b5bae8dbe6",
-	"Label_2": "1b57536444f561eceb3be2bc55968a3e",
-	"Label_3": "25f2e2d24747a5c7a5ce87ba4e6f25c9"
+	"ctrlLabel_0": "c92606b14ee03efe263fa782276b5f90",
+	"ctrlLabel_1": "bcc1f2f048557380548bd1b5bae8dbe6",
+	"ctrlLabel_2": "1b57536444f561eceb3be2bc55968a3e",
+	"ctrlLabel_3": "25f2e2d24747a5c7a5ce87ba4e6f25c9"
 }
 		},
 		{

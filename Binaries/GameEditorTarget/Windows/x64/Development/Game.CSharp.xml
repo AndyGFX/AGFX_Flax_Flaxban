@@ -32,6 +32,11 @@
             Zooms the camera down by the specified amount
             </summary>
         </member>
+        <member name="T:Game.Chest">
+            <summary>
+            Chest Script.
+            </summary>
+        </member>
         <member name="T:Game.Sokoban.GameControl">
             <summary>
             GameControl Script.

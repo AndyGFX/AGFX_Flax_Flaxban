@@ -183,6 +183,7 @@
     <Compile Include="Game\ExitOnEsc.cs" />
     <Compile Include="Game\FreeCamera.cs" />
     <Compile Include="Game\Sokoban\CameraControl.cs" />
+    <Compile Include="Game\Sokoban\Chest.cs" />
     <Compile Include="Game\Sokoban\GameControl.cs" />
     <Compile Include="Game\Sokoban\GLOBAL.cs" />
     <Compile Include="Game\Sokoban\GridCell.cs" />

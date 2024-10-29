@@ -4,7 +4,7 @@ using FlaxEngine;
 
 namespace Game.Sokoban
 {
-    public enum eCellType { FLOOR=0, TARGET=1, BLOCK=2, WALL=3, HOME=4 };
+    public enum eCellType { FLOOR=0, TARGET=1, CHEST=2, WALL=3, HOME=4 };
     /// <summary>
     /// GLOBAL Script.
     /// </summary>

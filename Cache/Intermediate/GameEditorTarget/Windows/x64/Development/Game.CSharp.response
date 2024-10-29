@@ -77,6 +77,7 @@
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\ExitOnEsc.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\FreeCamera.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\CameraControl.cs"
+"F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\Chest.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\GameControl.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\GLOBAL.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Sokoban\GridCell.cs"

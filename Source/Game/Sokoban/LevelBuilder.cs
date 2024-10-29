@@ -9,7 +9,7 @@ namespace Game.Sokoban
     /// </summary>
     public class LevelBuilder : Script
     {
-
+        public List<Chest> chests = new List<Chest>();
         private Color[] pixels;
         private GridCell[,] grid = new GridCell[0, 0];
         private Actor self;
@@ -79,10 +79,15 @@ namespace Game.Sokoban
                     
                     if (c == this.definition.colorChest)
                     {
-                        this.grid[x, y] = new GridCell(eCellType.BLOCK);
+                        this.grid[x, y] = new GridCell(eCellType.CHEST);
                         this.grid[x, y].collision = false;
                         Actor block = PrefabManager.SpawnPrefab(this.definition.prefabChest, this.self);
                         block.Position = new Float3(y * this.definition.gridCellSpacing, 0, x * this.definition.gridCellSpacing);
+                        Chest chest = new Chest();
+                        chest.actor = block;
+                        chest.gridPosition = new Vector2(x, y);
+                        chest.worldPosition = block.Position;
+                        this.chests.Add(chest);
                     }
 
                     if (c == this.definition.colorWall)
