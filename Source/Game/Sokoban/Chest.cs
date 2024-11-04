@@ -7,7 +7,7 @@ namespace Game;
 /// <summary>
 /// Chest Script.
 /// </summary>
-public class Chest
+public class TChest
 {
     public Actor actor;
     public Vector3 worldPosition;

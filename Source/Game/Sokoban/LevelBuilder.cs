@@ -9,7 +9,7 @@ namespace Game.Sokoban
     /// </summary>
     public class LevelBuilder : Script
     {
-        public List<Chest> chests = new List<Chest>();
+        public List<TChest> chests = new List<TChest>();
         private Color[] pixels;
         private GridCell[,] grid = new GridCell[0, 0];
         private Actor self;
@@ -83,7 +83,7 @@ namespace Game.Sokoban
                         this.grid[x, y].collision = false;
                         Actor block = PrefabManager.SpawnPrefab(this.definition.prefabChest, this.self);
                         block.Position = new Float3(y * this.definition.gridCellSpacing, 0, x * this.definition.gridCellSpacing);
-                        Chest chest = new Chest();
+                        TChest chest = new TChest();
                         chest.actor = block;
                         chest.gridPosition = new Vector2(x, y);
                         chest.worldPosition = block.Position;
@@ -144,5 +144,17 @@ namespace Game.Sokoban
         {
             return this.grid[(int)position.X, (int)position.Y].collision;
         }
+
+        public TChest GetChest(Vector2 position)
+        {
+            foreach (TChest chest in this.chests)
+            {
+                if (chest.gridPosition == position)
+                {
+                    return chest;
+                }
+            }
+            return null;
+        }   
     }
 }

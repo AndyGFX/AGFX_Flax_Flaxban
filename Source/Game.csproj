@@ -180,8 +180,16 @@
 
   <ItemGroup>
     <Compile Include="Game.Gen.cs" />
+    <Compile Include="Game\Ease.cs" />
     <Compile Include="Game\ExitOnEsc.cs" />
+    <Compile Include="Game\Extension\Extensions.Actor.cs" />
+    <Compile Include="Game\Extension\Extensions.cs" />
+    <Compile Include="Game\Extension\Extensions.UI.cs" />
+    <Compile Include="Game\FCallback.cs" />
     <Compile Include="Game\FreeCamera.cs" />
+    <Compile Include="Game\FTweener.cs" />
+    <Compile Include="Game\FTweenScene.cs" />
+    <Compile Include="Game\Sequence.cs" />
     <Compile Include="Game\Sokoban\CameraControl.cs" />
     <Compile Include="Game\Sokoban\Chest.cs" />
     <Compile Include="Game\Sokoban\GameControl.cs" />

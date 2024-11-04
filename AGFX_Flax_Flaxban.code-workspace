@@ -4,9 +4,9 @@
 		"npm.autoDetect": "off",
 		"gulp.autoDetect": "off",
 		"jake.autoDetect": "off",
-		"grunt.autoDetect": "off",
-		"omnisharp.defaultLaunchSolution": "AGFX_Flax_Flaxban.sln",
-		"omnisharp.useModernNet": true
+        "grunt.autoDetect": "off",
+        "omnisharp.useModernNet": true,
+        "dotnet.defaultSolution": "AGFX_Flax_Flaxban.sln"
 	},
 	"folders": [
 		{

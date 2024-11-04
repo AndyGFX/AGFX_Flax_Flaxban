@@ -5,6 +5,8 @@ using FlaxEngine;
 namespace Game.Sokoban
 {
     public enum eCellType { FLOOR=0, TARGET=1, CHEST=2, WALL=3, HOME=4 };
+    public enum eMoveType { FORWARD=0, DIRECT=1}
+    
     /// <summary>
     /// GLOBAL Script.
     /// </summary>

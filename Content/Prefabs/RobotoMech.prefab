@@ -1,0 +1,65 @@
+{
+	"ID": "ff5d76c74fcd0a4acb2222aabd3b9bdb",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6605,
+	"Data": [
+	{
+		"ID": "773588284e4cd91a5611c59ee635396d",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "RobotoMech",
+		"Model": "5883d8c54d5d163dc66017bbf1b40023",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "c10ec5784236c0d986e646ac0133b74e",
+		"TypeName": "FlaxEngine.SpotLight",
+		"ParentID": "773588284e4cd91a5611c59ee635396d",
+		"Name": "SpotLight 0",
+		"Transform": {
+			"Translation": {
+				"X": 15.0,
+				"Y": 136.0839385986328,
+				"Z": 0.0
+			},
+			"Orientation": {
+				"X": 0.4269576966762543,
+				"Y": 0.0,
+				"Z": 0.0,
+				"W": 0.90427166223526
+			}
+		},
+		"Brightness": 10.0,
+		"OuterAngle": 15.0
+	},
+	{
+		"ID": "7f60140f4e769edd9e9bf89ddfdc048b",
+		"TypeName": "FlaxEngine.SpotLight",
+		"ParentID": "773588284e4cd91a5611c59ee635396d",
+		"Name": "SpotLight 1",
+		"Transform": {
+			"Translation": {
+				"X": -15.0,
+				"Y": 136.0839385986328,
+				"Z": 0.0
+			},
+			"Orientation": {
+				"X": 0.4269576966762543,
+				"Y": 0.0,
+				"Z": 0.0,
+				"W": 0.90427166223526
+			}
+		},
+		"Brightness": 10.0,
+		"OuterAngle": 15.0
+	}
+]
+}
