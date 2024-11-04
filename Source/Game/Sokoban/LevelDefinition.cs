@@ -27,6 +27,11 @@ public class LevelDefinition : Script
         [EditorDisplay("Color")]
         public Color colorFloor = Color.White;
 
+        // FLOOR - CHEST
+        [EditorDisplay("Blocks")]
+        public Prefab prefabFloorChest;
+        
+
         // WALL
         [EditorDisplay("Blocks")]
         public Prefab prefabWall;

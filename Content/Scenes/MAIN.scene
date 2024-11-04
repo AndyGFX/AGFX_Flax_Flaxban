@@ -148,7 +148,9 @@
 			"ID": "c5d991fb4dd5a5a9383cc3bc8ae65217",
 			"TypeName": "Game.PlayerControl",
 			"ParentID": "27cc8c0a48b6e9eb5cebddb2d576d9e7",
-			"V": {}
+			"V": {
+	"moveType": 1
+}
 		},
 		{
 			"ID": "c7773dcb41bafcb7c93f4389115592ee",
@@ -193,6 +195,7 @@
 		"A": 1.0
 	},
 	"prefabFloor": "916a5ea44efa03556ef9dea48e979ba3",
+	"prefabFloorChest": "4296bf144f1a8e6b2e7fe58b7916daa0",
 	"prefabWall": "0d14c26a4ac10ae82030c988a670c883",
 	"prefabTarget": "d8d23ff641182c3e94576d92b724668f",
 	"prefabChest": "cd9e57074e223acca5a8b4ade1a73668"
@@ -221,7 +224,8 @@
 	"ctrlLabel_0": "c92606b14ee03efe263fa782276b5f90",
 	"ctrlLabel_1": "bcc1f2f048557380548bd1b5bae8dbe6",
 	"ctrlLabel_2": "1b57536444f561eceb3be2bc55968a3e",
-	"ctrlLabel_3": "25f2e2d24747a5c7a5ce87ba4e6f25c9"
+	"ctrlLabel_3": "25f2e2d24747a5c7a5ce87ba4e6f25c9",
+	"ctrlLabel_4": "0a525dd4411801a0aa02cc8f6a9269de"
 }
 		},
 		{
@@ -698,6 +702,106 @@
 		"Left": 17.0,
 		"Right": 155.0,
 		"Top": 80.0,
+		"Bottom": 20.0
+	},
+	"Scale": {
+		"X": 1.0,
+		"Y": 1.0
+	},
+	"Pivot": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Shear": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Rotation": 0.0,
+	"BackgroundColor": {
+		"R": 0.0,
+		"G": 0.0,
+		"B": 0.0,
+		"A": 0.0
+	},
+	"BackgroundBrush": null,
+	"Enabled": true,
+	"Visible": true,
+	"AutoFocus": false
+}
+		},
+		{
+			"ID": "0a525dd4411801a0aa02cc8f6a9269de",
+			"TypeName": "FlaxEngine.UIControl",
+			"ParentID": "fb9a7d364a4558a3e43fe09253bc06e6",
+			"Name": "Label 4",
+			"Transform": {
+				"Translation": {
+					"X": 17.0,
+					"Y": 100.0,
+					"Z": 0.0
+				},
+				"Orientation": {
+					"X": -1.0,
+					"Y": -4.371138828673793e-8,
+					"Z": -4.371138828673793e-8,
+					"W": 1.910685465164705e-15
+				}
+			},
+			"Control": "FlaxEngine.GUI.Label",
+			"Data": {
+	"Text": "label 0",
+	"CaseOption": 0,
+	"Bold": false,
+	"Italic": false,
+	"TextColor": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"TextColorHighlighted": {
+		"R": 1.0,
+		"G": 1.0,
+		"B": 1.0,
+		"A": 1.0
+	},
+	"HorizontalAlignment": 0,
+	"VerticalAlignment": 1,
+	"Wrapping": 0,
+	"BaseLinesGapScale": 1.0,
+	"Font": {
+		"Font": "4508d98f4aa1f0bd59362b81d47e38f4",
+		"Size": 9.0
+	},
+	"Material": null,
+	"Margin": {
+		"Left": 0.0,
+		"Right": 0.0,
+		"Top": 0.0,
+		"Bottom": 0.0
+	},
+	"ClipText": false,
+	"AutoWidth": false,
+	"AutoHeight": false,
+	"AutoFitText": false,
+	"AutoFitTextRange": {
+		"X": 0.1,
+		"Y": 100.0
+	},
+	"ClipChildren": true,
+	"CullChildren": true,
+	"AnchorMin": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"AnchorMax": {
+		"X": 0.0,
+		"Y": 0.0
+	},
+	"Offsets": {
+		"Left": 17.0,
+		"Right": 155.0,
+		"Top": 100.0,
 		"Bottom": 20.0
 	},
 	"Scale": {

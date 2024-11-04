@@ -314,5 +314,10 @@
         <member name="M:Game.PlayerControl.OnUpdate">
             <inheritdoc/>
         </member>
+        <member name="T:Game.TPlace">
+            <summary>
+            TPlace Script.
+            </summary>
+        </member>
     </members>
 </doc>

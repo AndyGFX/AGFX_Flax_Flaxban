@@ -17,6 +17,9 @@ namespace Game.Sokoban
         public static CameraControl CAMERA { get; set; }
         public static HUD HUD { get; set; }
 
+        public static int chestCount = 0;
+        public static int chestCountOnPlace = 0;
+
         
     }
 }

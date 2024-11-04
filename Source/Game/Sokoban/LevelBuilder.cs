@@ -10,6 +10,7 @@ namespace Game.Sokoban
     public class LevelBuilder : Script
     {
         public List<TChest> chests = new List<TChest>();
+        public List<TPlace> places = new List<TPlace>();
         private Color[] pixels;
         private GridCell[,] grid = new GridCell[0, 0];
         private Actor self;
@@ -25,6 +26,8 @@ namespace Game.Sokoban
             this.definition.map.GetPixels(out this.pixels);
             this.self = Actor;
             
+            this.chests.Clear();
+            this.places.Clear();
         }
 
         /// <inheritdoc/>
@@ -75,6 +78,15 @@ namespace Game.Sokoban
                         this.grid[x, y].collision = false;
                         Actor target = PrefabManager.SpawnPrefab(this.definition.prefabTarget, this.self);
                         target.Position = new Float3(y * this.definition.gridCellSpacing, 0, x * this.definition.gridCellSpacing);
+
+                        // store PLACE
+                        TPlace place = new TPlace();
+                        place.actor = target;
+                        place.gridPosition = new Vector2(x, y);
+                        place.worldPosition = target.Position;
+                        this.places.Add(place);
+
+
                     }
                     
                     if (c == this.definition.colorChest)
@@ -83,11 +95,18 @@ namespace Game.Sokoban
                         this.grid[x, y].collision = false;
                         Actor block = PrefabManager.SpawnPrefab(this.definition.prefabChest, this.self);
                         block.Position = new Float3(y * this.definition.gridCellSpacing, 0, x * this.definition.gridCellSpacing);
+
+                        // store CHEST
                         TChest chest = new TChest();
                         chest.actor = block;
                         chest.gridPosition = new Vector2(x, y);
                         chest.worldPosition = block.Position;
                         this.chests.Add(chest);
+
+                        // FLOOR
+                        Actor floor = PrefabManager.SpawnPrefab(this.definition.prefabFloorChest, this.self);
+                        
+                        floor.Position = new Float3(y * this.definition.gridCellSpacing, 0, x * this.definition.gridCellSpacing);
                     }
 
                     if (c == this.definition.colorWall)
@@ -142,7 +161,17 @@ namespace Game.Sokoban
 
         public bool IsObstacle(Vector2 position)    
         {
-            return this.grid[(int)position.X, (int)position.Y].collision;
+            bool res = this.grid[(int)position.X, (int)position.Y].collision;
+            
+            if  (this.grid[(int)position.X, (int)position.Y].cellType == eCellType.CHEST) res = true;
+
+            return res;
+        }
+
+        public void SetChestAt(Vector2 position, eCellType cellType, bool collision)
+        {
+            this.grid[(int)position.X, (int)position.Y].cellType = cellType;
+            this.grid[(int)position.X, (int)position.Y].collision = collision;
         }
 
         public TChest GetChest(Vector2 position)

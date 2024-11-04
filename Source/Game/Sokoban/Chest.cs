@@ -12,5 +12,6 @@ public class TChest
     public Actor actor;
     public Vector3 worldPosition;
     public Vector2 gridPosition;
+    public bool onPlace = false;
 
 }

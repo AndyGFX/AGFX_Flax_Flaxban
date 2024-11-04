@@ -141,12 +141,14 @@ public class PlayerControl : Script
         this.forwardStep += this.moveSpeed;
         this.Actor.Position += this.Actor.LocalTransform.Forward * this.moveSpeed;
         GLOBAL.CAMERA.Move(this.Actor.LocalTransform.Forward * this.moveSpeed);
+        
 
         // shift chest if needed
         this.chest = GLOBAL.LEVEL.GetChest(this.gridPosition+direction[currentDirection]);
         if (this.chest != null)
         {
             this.chest.actor.Position += this.Actor.LocalTransform.Forward * this.moveSpeed;
+            GLOBAL.LEVEL.SetChestAt(this.gridPosition+direction[currentDirection],eCellType.FLOOR,false);
             
         }
 
@@ -164,6 +166,7 @@ public class PlayerControl : Script
             if (this.chest != null)
             {
                 this.chest.gridPosition += direction[currentDirection];
+                GLOBAL.LEVEL.SetChestAt(this.gridPosition+direction[currentDirection],eCellType.CHEST,false);
             }
 
             this.DebugDraw();
