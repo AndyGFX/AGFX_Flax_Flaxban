@@ -3,8 +3,8 @@
 	"TypeName": "FlaxEditor.Content.Settings.GameSettings",
 	"EngineBuild": 6605,
 	"Data": {
-	"ProductName": "My Game",
-	"CompanyName": "My Company",
+	"ProductName": "Flax-Ban",
+	"CompanyName": "AndyGFX",
 	"CopyrightNotice": null,
 	"Icon": null,
 	"FirstScene": "1cf075af478440008229659b51ace728",

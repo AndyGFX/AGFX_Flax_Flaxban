@@ -24,34 +24,28 @@ public class CameraControl : Script
     public float currentTargetDistance = 0;
 
     private Vector3 targetPosition = new Vector3(0, 0, 0);
-    
-    /// <inheritdoc/>
-    /// 
-    public override void OnStart()
-    {
-        
-    }
-    
-    /// <inheritdoc/>
-    public override void OnEnable()
-    {
-        
-    }
 
-    /// <inheritdoc/>
-    public override void OnDisable()
+    private Vector3 deltaMove = new Vector3(0, 0, 0);
+    /// <summary>
+    /// Updates the camera's position and handles zoom input.
+    /// </summary>
+    public void UpdateCameraControl()
     {
-        // Here you can add code that needs to be called when script is disabled (eg. unregister from events)
-    }
-
-    /// <inheritdoc/>
-    public override void OnUpdate()
-    {
+         this.Actor.Position += this.deltaMove;
         this.Actor.Position = GLOBAL.PLAYER.Actor.Position - this.Actor.LocalTransform.Forward * this.currentTargetDistance;
+
+        if (Input.GetAction("ZoomUp")) { GLOBAL.CAMERA.ZoomUp(); }
+        if (Input.GetAction("ZoomDown")) { GLOBAL.CAMERA.ZoomDown(); }
     }
 
-
-    public void UpdateCameraPosition()
+    /// <summary>
+    /// Sets up camera's initial position and orientation.
+    /// </summary>
+    /// <remarks>
+    /// Sets camera position to the player's position, adds the specified offset to it,
+    /// sets the camera's Euler angles to the specified orientation, and makes the camera look at the player.
+    /// </remarks>
+    public void PrepareCameraOnStart()
     {
         // set camera position
         this.Actor.Position = GLOBAL.PLAYER.Actor.Position;
@@ -68,6 +62,13 @@ public class CameraControl : Script
     }
 
 
+    /// <summary>
+    /// Prepares camera for zooming.
+    /// </summary>
+    /// <remarks>
+    /// Sets camera position to the maximum target distance, sets the start and end camera positions
+    /// for the zoom tween, and calculates the current target distance to the player.
+    /// </remarks>
     public void PrepareZoom()
     {
         // set at max zoom distance
@@ -79,14 +80,14 @@ public class CameraControl : Script
         // set at max zoom distance
         this.endCameraPosition = GLOBAL.PLAYER.Actor.Position - this.Actor.LocalTransform.Forward * this.minTargetDistance;
         
-        //calc startup distance to player
-        
+        //calc startup distance to player        
         this.currentTargetDistance = Vector3.Distance(this.Actor.Position, GLOBAL.PLAYER.Actor.Position);
     }
 
-    public void Move(Vector3 delta)
+ 
+    public void SetDeltaMove(Vector3 delta)
     {
-        this.Actor.Position += delta;
+        this.deltaMove = delta;
     }
 
     /// <summary>

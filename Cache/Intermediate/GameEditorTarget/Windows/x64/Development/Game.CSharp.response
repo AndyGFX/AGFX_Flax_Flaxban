@@ -74,6 +74,7 @@
 /analyzer:"C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.10\analyzers\dotnet\cs\Microsoft.Interop.LibraryImportGenerator.dll"
 /analyzer:"C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.10\analyzers\dotnet\cs\Microsoft.Interop.SourceGeneration.dll"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game.Gen.cs"
+"F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\CameraTV.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Ease.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\ExitOnEsc.cs"
 "F:\_GITHUB_FLAX\AGFX_Flax_Flaxban\Source\Game\Extension\Extensions.Actor.cs"

@@ -4,6 +4,41 @@
         <name>Game.CSharp</name>
     </assembly>
     <members>
+        <member name="T:CameraTV">
+            <summary>
+            Simple script that renders the camera view to the texture and draws it with material on model.
+            </summary>
+            <seealso cref="T:FlaxEngine.Script" />
+        </member>
+        <member name="F:CameraTV.Cam">
+            <summary>
+            The camera to draw.
+            </summary>
+        </member>
+        <member name="F:CameraTV.Material">
+            <summary>
+            The material to use for rendering. Needs to have texture parameter `Image`.
+            </summary>
+        </member>
+        <member name="P:CameraTV.Resolution">
+            <summary>
+            The camera preview resolution.
+            </summary>
+        </member>
+        <member name="F:CameraTV.ViewDistance">
+            <summary>
+            The max distance from player to the TV when rendering is enabled. Used to cull additional work if TV is far away from the player.
+            </summary>
+        </member>
+        <member name="M:CameraTV.OnEnable">
+            <inheritdoc />
+        </member>
+        <member name="M:CameraTV.OnUpdate">
+            <inheritdoc />
+        </member>
+        <member name="M:CameraTV.OnDisable">
+            <inheritdoc />
+        </member>
         <member name="F:FTween.EaseFunc.PI">
             <summary>
             Constant Pi.
@@ -195,18 +230,28 @@
             CameraControl Script.
             </summary>
         </member>
-        <member name="M:Game.CameraControl.OnStart">
-            <inheritdoc/>
-            
+        <member name="M:Game.CameraControl.UpdateCameraControl">
+            <summary>
+            Updates the camera's position and handles zoom input.
+            </summary>
         </member>
-        <member name="M:Game.CameraControl.OnEnable">
-            <inheritdoc/>
+        <member name="M:Game.CameraControl.PrepareCameraOnStart">
+            <summary>
+            Sets up camera's initial position and orientation.
+            </summary>
+            <remarks>
+            Sets camera position to the player's position, adds the specified offset to it,
+            sets the camera's Euler angles to the specified orientation, and makes the camera look at the player.
+            </remarks>
         </member>
-        <member name="M:Game.CameraControl.OnDisable">
-            <inheritdoc/>
-        </member>
-        <member name="M:Game.CameraControl.OnUpdate">
-            <inheritdoc/>
+        <member name="M:Game.CameraControl.PrepareZoom">
+            <summary>
+            Prepares camera for zooming.
+            </summary>
+            <remarks>
+            Sets camera position to the maximum target distance, sets the start and end camera positions
+            for the zoom tween, and calculates the current target distance to the player.
+            </remarks>
         </member>
         <member name="M:Game.CameraControl.ZoomUp">
             <summary>
@@ -231,15 +276,6 @@
         <member name="M:Game.Sokoban.GameControl.OnStart">
             <inheritdoc/>
             
-        </member>
-        <member name="M:Game.Sokoban.GameControl.OnEnable">
-            <inheritdoc/>
-        </member>
-        <member name="M:Game.Sokoban.GameControl.OnDisable">
-            <inheritdoc/>
-        </member>
-        <member name="M:Game.Sokoban.GameControl.OnUpdate">
-            <inheritdoc/>
         </member>
         <member name="T:Game.Sokoban.GLOBAL">
             <summary>
@@ -303,15 +339,6 @@
             </summary>
         </member>
         <member name="M:Game.PlayerControl.OnStart">
-            <inheritdoc/>
-        </member>
-        <member name="M:Game.PlayerControl.OnEnable">
-            <inheritdoc/>
-        </member>
-        <member name="M:Game.PlayerControl.OnDisable">
-            <inheritdoc/>
-        </member>
-        <member name="M:Game.PlayerControl.OnUpdate">
             <inheritdoc/>
         </member>
         <member name="T:Game.TPlace">

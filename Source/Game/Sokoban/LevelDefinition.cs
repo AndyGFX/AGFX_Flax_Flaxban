@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FlaxEngine;
-
+using Path = System.IO.Path;
 namespace Game;
 
 /// <summary>
@@ -12,7 +12,9 @@ public class LevelDefinition : Script
 
         // -------------------------------------------------------- LEVEL BUILDER
         // MAP
-        
+        public List<string> maps = new List<string>();
+
+        [HideInEditor]
         public Texture map;
 
         // HOME
@@ -26,8 +28,6 @@ public class LevelDefinition : Script
         public Prefab prefabFloor;
         [EditorDisplay("Color")]
         public Color colorFloor = Color.White;
-
-        // FLOOR - CHEST
         [EditorDisplay("Blocks")]
         public Prefab prefabFloorChest;
         
@@ -47,6 +47,9 @@ public class LevelDefinition : Script
         // CHEST
         [EditorDisplay("Blocks")]
         public Prefab prefabChest;
+
+        [EditorDisplay("Blocks")]
+        public Prefab prefabChestLocked;
         [EditorDisplay("Color")]
         public Color colorChest = Color.Blue;
 
@@ -56,6 +59,8 @@ public class LevelDefinition : Script
         [EditorDisplay("Color")]
         public Color colorOuterZone = Color.Yellow;
 
+
+
         [EditorDisplay("Grid properties")]
         public float gridCellSpacing = 100.0f;
 
@@ -63,6 +68,7 @@ public class LevelDefinition : Script
     public override void OnStart()
     {
         // Here you can add code that needs to be called when script is created, just before the first game update
+        
     }
     
     /// <inheritdoc/>
@@ -81,5 +87,11 @@ public class LevelDefinition : Script
     public override void OnUpdate()
     {
         // Here you can add code that needs to be called every frame
+    }
+
+    public void LoadMap(int level)
+    {
+        
+         this.map = Content.Load<Texture>(Path.Combine(Globals.ProjectContentFolder, "Textures/"+this.maps[level]+".flax"));
     }
 }

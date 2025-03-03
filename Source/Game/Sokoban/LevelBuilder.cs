@@ -16,18 +16,18 @@ namespace Game.Sokoban
         private Actor self;
         private Random random = new Random();
 
+        public int MapID = 1;
         public LevelDefinition definition;
         public Vector2 homePosition = new Vector2(0, 0);
         /// <inheritdoc/>
         public override void OnStart() 
         {            
-            this.pixels = new Color[this.definition.map.Height * this.definition.map.Width];
-            this.grid = new GridCell[this.definition.map.Height, this.definition.map.Width];
-            this.definition.map.GetPixels(out this.pixels);
+
             this.self = Actor;
+            this.definition.LoadMap(this.MapID);
+            this.ResetLevelData();
             
-            this.chests.Clear();
-            this.places.Clear();
+
         }
 
         /// <inheritdoc/>
@@ -49,6 +49,25 @@ namespace Game.Sokoban
 
         }
         
+        public void ResetLevelData()
+        {
+            this.pixels = new Color[this.definition.map.Height * this.definition.map.Width];
+            this.grid = new GridCell[this.definition.map.Height, this.definition.map.Width];
+            this.definition.map.GetPixels(out this.pixels);
+
+
+            foreach (TChest chest in this.chests)
+            {
+                if (chest.actor ) Destroy(chest.actor);
+            }
+            foreach (TPlace place in this.places)
+            {
+                if (place.actor ) Destroy(place.actor);
+            }
+
+            this.chests.Clear();
+            this.places.Clear();
+        }
         public void BuildLevel()        
         {
             Debug.Log("Building Level");
@@ -99,6 +118,8 @@ namespace Game.Sokoban
                         // store CHEST
                         TChest chest = new TChest();
                         chest.actor = block;
+                        chest.locker = PrefabManager.SpawnPrefab(this.definition.prefabChestLocked, chest.actor);
+                        chest.locker.IsActive = false;
                         chest.gridPosition = new Vector2(x, y);
                         chest.worldPosition = block.Position;
                         this.chests.Add(chest);
@@ -172,6 +193,8 @@ namespace Game.Sokoban
         {
             this.grid[(int)position.X, (int)position.Y].cellType = cellType;
             this.grid[(int)position.X, (int)position.Y].collision = collision;
+
+            this.CheckChestCountAtPlace();
         }
 
         public TChest GetChest(Vector2 position)
@@ -185,5 +208,29 @@ namespace Game.Sokoban
             }
             return null;
         }   
+
+
+        public void CheckChestCountAtPlace()
+        {
+            GLOBAL.chestCountOnPlace = 0;
+
+            foreach (TChest chest in this.chests)
+            {
+                chest.UnLockChest();
+            }
+
+            foreach ( TPlace place in this.places)
+            {
+                foreach (TChest chest in this.chests)
+                {
+                    if (place.gridPosition == chest.gridPosition)
+                    {
+                        chest.LockChest();
+                        GLOBAL.chestCountOnPlace++;
+                    }
+                }
+            }
+
+        }
     }
 }

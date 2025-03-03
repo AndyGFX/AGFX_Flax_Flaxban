@@ -16,11 +16,13 @@ public class HUD : Script
     public UIControl ctrlLabel_2;
     public UIControl ctrlLabel_3;
     public UIControl ctrlLabel_4;
+    public UIControl ctrlLabel_5;
     public Label label_0;
     public Label label_1;
     public Label label_2;
     public Label label_3;
     public Label label_4;
+    public Label label_5;
 
     /// <inheritdoc/>
     public override void OnStart()
@@ -32,6 +34,7 @@ public class HUD : Script
         this.label_2 = ctrlLabel_2.Get<Label>();
         this.label_3 = ctrlLabel_3.Get<Label>();    
         this.label_4 = ctrlLabel_4.Get<Label>();    
+        this.label_5 = ctrlLabel_5.Get<Label>();    
         GLOBAL.HUD = Actor.GetScript<HUD>();
     }
     

@@ -41,21 +41,8 @@ public class PlayerControl : Script
         }
         
     }
-    
-    /// <inheritdoc/>
-    public override void OnEnable()
-    {
-        // Here you can add code that needs to be called when script is enabled (eg. register for events)
-    }
 
-    /// <inheritdoc/>
-    public override void OnDisable()
-    {
-        // Here you can add code that needs to be called when script is disabled (eg. unregister from events)
-    }
-
-    /// <inheritdoc/>
-    public override void OnUpdate()
+    public void UpdatePlayerControl()
     {
 
         if (this.moveType == eMoveType.FORWARD)
@@ -78,8 +65,6 @@ public class PlayerControl : Script
 
         if (this.controlLocked){ this.MoveForward(); } 
 
-        if (Input.GetAction("ZoomUp")) { GLOBAL.CAMERA.ZoomUp(); }
-        if (Input.GetAction("ZoomDown")) { GLOBAL.CAMERA.ZoomDown(); }
 
     }
 
@@ -140,7 +125,7 @@ public class PlayerControl : Script
         
         this.forwardStep += this.moveSpeed;
         this.Actor.Position += this.Actor.LocalTransform.Forward * this.moveSpeed;
-        GLOBAL.CAMERA.Move(this.Actor.LocalTransform.Forward * this.moveSpeed);
+        GLOBAL.CAMERA.SetDeltaMove(this.Actor.LocalTransform.Forward * this.moveSpeed);
         
 
         // shift chest if needed
@@ -152,9 +137,6 @@ public class PlayerControl : Script
             
         }
 
-        // Check free space in front of viewport
-        //Vector2 checkCell = gridPosition + direction[currentDirection]*2;
-        
 
         if (this.forwardStep >= 100)
         {
@@ -209,15 +191,18 @@ public class PlayerControl : Script
 #endregion
 
 
+
+
     public void SetGridPosition(Vector2 position)
     {
         this.gridPosition = position;        
     }
-    
+
     public void UpdatePosition()
     {        
         this.Actor.Position = new Float3(this.gridPosition.Y * GLOBAL.LEVEL.definition.gridCellSpacing, 0, this.gridPosition.X * GLOBAL.LEVEL.definition.gridCellSpacing);
     }
+
 
     public void DebugDraw()
     {
@@ -227,10 +212,13 @@ public class PlayerControl : Script
         GLOBAL.HUD.label_1.Text = "Cell: "+GLOBAL.LEVEL.GetCellType(this.gridPosition).ToString();
         GLOBAL.HUD.label_2.Text = "Cell front: "+GLOBAL.LEVEL.GetCellType(this.gridPosition+direction[currentDirection]).ToString();
         GLOBAL.HUD.label_3.Text = "Obstacle: "+GLOBAL.LEVEL.IsObstacle(this.gridPosition+direction[currentDirection]).ToString();
+        
         if (this.chest == null)
-        GLOBAL.HUD.label_4.Text = "Chest: NONE";  
+            GLOBAL.HUD.label_4.Text = "Chest: NONE";  
         else
-        GLOBAL.HUD.label_4.Text = "Chest: "+this.chest.ToString();  
+            GLOBAL.HUD.label_4.Text = "Chest: "+this.chest.ToString();  
+
+        GLOBAL.HUD.label_5.Text = "Places: "+GLOBAL.chestCountOnPlace.ToString();  
     }
 
     public bool MoveNotBlocked()

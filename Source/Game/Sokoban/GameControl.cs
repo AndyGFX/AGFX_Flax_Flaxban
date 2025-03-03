@@ -29,8 +29,9 @@ namespace Game.Sokoban
             GLOBAL.PLAYER = Scene.FindActor(this.PLAYER_object_name).GetScript<PlayerControl>();
             PrefabManager.SpawnPrefab(this.PLAYER_prefab, GLOBAL.PLAYER.Actor);
 
+            // setup camera
             GLOBAL.CAMERA = Scene.FindActor(this.CAMERA_object_name).GetScript<CameraControl>();
-            GLOBAL.CAMERA.UpdateCameraPosition();
+            GLOBAL.CAMERA.PrepareCameraOnStart();
             
 
             // build level from texture
@@ -40,27 +41,25 @@ namespace Game.Sokoban
             GLOBAL.PLAYER.SetGridPosition(GLOBAL.LEVEL.homePosition);            
             GLOBAL.PLAYER.UpdatePosition();
             GLOBAL.CAMERA.PrepareZoom();
-            
-
+         
 
         }
-        
-        /// <inheritdoc/>
-        public override void OnEnable()
-        {
-            // Here you can add code that needs to be called when script is enabled (eg. register for events)
-        }
 
-        /// <inheritdoc/>
-        public override void OnDisable()
-        {
-            // Here you can add code that needs to be called when script is disabled (eg. unregister from events)
-        }
-
-        /// <inheritdoc/>
         public override void OnUpdate()
-        {
-            // Here you can add code that needs to be called every frame
+        {            
+            GLOBAL.PLAYER.UpdatePlayerControl();
+            GLOBAL.CAMERA.UpdateCameraControl();
+
+
+            if (Input.GetKeyDown(KeyboardKeys.R))
+            {
+                GLOBAL.LEVEL.ResetLevelData();
+                GLOBAL.LEVEL.BuildLevel();
+            
+                // Set player position            
+                GLOBAL.PLAYER.SetGridPosition(GLOBAL.LEVEL.homePosition);            
+                GLOBAL.PLAYER.UpdatePosition();
+            }
         }
     }
 }   
